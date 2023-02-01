@@ -1,0 +1,12 @@
+//=================================  Sign   =========================================//
+input{
+  border-color:black;
+}
+.social-btn {
+  .btn {
+    min-width: 64px;
+    &:hover {
+      background-color: rgba(145, 158, 171, 0.08);
+    }
+  }
+}
