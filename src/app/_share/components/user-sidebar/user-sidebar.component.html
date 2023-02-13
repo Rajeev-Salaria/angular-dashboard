@@ -7,7 +7,7 @@
       <div>
         <img src="https://minimal-kit-react.vercel.app/assets/images/avatars/avatar_default.jpg" class="img-fluid rounded-circle" height="40" width="40" alt="loading"/>
         </div>
-        <div class="ms-3 fw-semibold">Rajeev Salaria</div>
+        <div class="ms-3 fw-semibold">{{user?.firstName + " "+user?.lastName | titlecase}}</div>
       </div>
       <ul class="nav flex-column">
         <li class="nav-item" *ngFor="let elm of navService.userMenuItems">

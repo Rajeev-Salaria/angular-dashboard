@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, Renderer2 } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -15,10 +15,10 @@ import { map } from 'rxjs';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit,AfterViewInit{
   public form!: FormGroup;
   public isSubmit: boolean = false;
-  constructor(public fb: FormBuilder, private _authService: AuthService,private router: Router) {}
+  constructor(public fb: FormBuilder, private _authService: AuthService,private router: Router,private renderer:Renderer2) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -39,6 +39,11 @@ export class RegisterComponent implements OnInit {
     }
     this.router.navigate(['/home']);
    }))
+  }
+
+  ngAfterViewInit(): void {
+    let root = this.renderer.selectRootElement('#initial-loader');
+    this.renderer.setStyle(root, 'display', 'none');
   }
 
   get firstName() {

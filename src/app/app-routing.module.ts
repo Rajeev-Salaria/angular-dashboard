@@ -5,7 +5,7 @@ import { NotFoundComponent } from './_pages/not-found/not-found.component';
 const routes: Routes = [{path:'',
 redirectTo: 'sign-in',pathMatch:"full"},
 {path:'',children:sharedRoutes},
-{path:'**',component:NotFoundComponent}];
+{path:'**',component:NotFoundComponent,title:'404'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

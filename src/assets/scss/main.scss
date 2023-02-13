@@ -17,6 +17,15 @@ $headings-font-family: 'Open Sans', sans-serif !default;
 $input-font-weight:500!default;
 $input-font-family: $headings-font-family !default;
 $input-btn-focus-box-shadow:none !default;
+
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 0.844,
+  6: 0.75rem
+);
 /* ========== global custom classes ===== */
 .main {
 background-color: rgb(249, 250, 251);
@@ -41,4 +50,54 @@ aside{
 
 .offcanvas{
   height:fit-content !important;
+}
+
+
+.loader-box {
+  height: 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  .line {
+    animation: expand 1s ease-in-out infinite;
+    border-radius: 10px;
+    display: inline-block;
+    transform-origin: center center;
+    margin: 0 3px;
+    width: 1px;
+    height: 25px;
+
+    &:nth-child(1) {
+      background: rgba(0,0,0,1);
+    }
+
+    &:nth-child(2) {
+      animation-delay: 180ms;
+      background: rgba(0,0,0,1);
+    }
+
+    &:nth-child(3) {
+      animation-delay: 360ms;
+      background: rgba(0,0,0,1);
+    }
+
+    &:nth-child(4) {
+      animation-delay: 540ms;
+      background: rgba(0,0,0,1);
+    }
+  }
+
+  @keyframes expand {
+    0% {
+      transform: scale(1);
+    }
+
+    25% {
+      transform: scale(2);
+    }
+  }
 }

@@ -9,10 +9,10 @@ import { UserLayoutComponent } from 'src/app/_share/layout/user-layout/user-layo
 
 const routes: Routes = [{
 path:'',component:UserLayoutComponent,
-children:[{path:'home',component:DashboardComponent},
-{path:'products',component:ProductComponent},
-{path:'user',component:UserComponent},
-{path:'blog',component:BlogComponent},
+children:[{path:'home',component:DashboardComponent, title:'Home'},
+{path:'products',component:ProductComponent,title:'Products'},
+{path:'user',component:UserComponent,title:'Users'},
+{path:'blog',component:BlogComponent,title:'Blog'},
 {path:'login',component:LoginComponent}]}];
 
 @NgModule({

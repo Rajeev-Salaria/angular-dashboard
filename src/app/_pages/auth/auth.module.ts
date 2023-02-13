@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -19,4 +19,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterComponent
   ]
 })
-export class AuthModule { }
+export class AuthModule { 
+
+}
