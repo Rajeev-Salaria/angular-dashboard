@@ -24,6 +24,7 @@ import { AuthInterceptor } from './_share/interceptors/auth.interceptor';
     HttpClientModule,
     FontAwesomeModule,
   ],
+  exports:[SharedModule],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })

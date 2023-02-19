@@ -7,12 +7,17 @@ import { UserLayoutComponent } from './layout/user-layout/user-layout.component'
 import { faSearch ,faUserCircle,faBell} from '@fortawesome/free-solid-svg-icons';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbCollapseModule,NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { SortableDirective } from './directives/sortable.directive';
+import { TestDirective } from './directives/test.directive';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SearchPipe } from './pipes/search.pipe';
 @NgModule({
-  declarations: [HeaderComponent,UserSidebarComponent, UserLayoutComponent],
+  declarations: [HeaderComponent,UserSidebarComponent, UserLayoutComponent,TestDirective,SortableDirective, FilterPipe, SearchPipe],
   imports: [
     CommonModule,
     RouterOutlet,RouterModule,FontAwesomeModule,NgbCollapseModule,NgbDropdownModule
-  ]
+  ],
+  exports:[TestDirective,SortableDirective,SearchPipe]
 })
 export class SharedModule { 
   constructor(library: FaIconLibrary) {

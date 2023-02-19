@@ -8,17 +8,19 @@ import { UserComponent } from './user/user.component';
 import { BlogComponent } from './blog/blog.component';
 import { faCircle,faEllipsisV,faPencil,faTrash,faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { NgbDropdownModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from 'src/app/_share/shared.module';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [ DashboardComponent,
     ProductComponent,
     UserComponent,
-    BlogComponent,],
+    BlogComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
-    NgChartsModule ,FontAwesomeModule,NgbDropdownModule
+    NgChartsModule ,FontAwesomeModule,NgbDropdownModule,NgbPaginationModule,SharedModule,ReactiveFormsModule,FormsModule 
   ]
 })
 export class UserModule { 
