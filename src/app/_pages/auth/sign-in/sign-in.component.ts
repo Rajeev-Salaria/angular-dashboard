@@ -51,6 +51,7 @@ export class SignInComponent implements OnInit ,AfterViewInit{
     this._authService.login(this.form.value).subscribe(
       (data: any) => {
         this.router.navigate(['/home'])
+        console.log(data)
         localStorage.setItem('token', data.token)
       },
       (error) => this.isSubmit = false,

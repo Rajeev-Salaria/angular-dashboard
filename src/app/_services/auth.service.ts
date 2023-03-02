@@ -12,7 +12,7 @@ type gender = 'male' | 'female';
 })
 export class AuthService {
   private url = 'http://localhost:5000/api/user';
-  public user = new BehaviorSubject<string | undefined | null>(null);
+  public user = new BehaviorSubject<string | null>(null);
   public userInfo = new BehaviorSubject<any>(null);
   constructor(private http: HttpClient, private _errorService: ErrorService) { }
 
@@ -28,7 +28,7 @@ export class AuthService {
 
   getAuthToken(): string | undefined | null {
     let token = localStorage.getItem('token')
-    this.user.next(token);
+    token !== undefined ? this.user.next(token) : this.user.next(null);
     return token;
   }
 
