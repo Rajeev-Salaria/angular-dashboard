@@ -13,7 +13,7 @@ type gender = 'male' | 'female';
 export class AuthService {
   private url = 'http://localhost:5000/api/user';
   public user = new BehaviorSubject<string | null>(null);
-  public userInfo = new BehaviorSubject<any>(null);
+  public userInfo = new BehaviorSubject<string|null|undefined|object>(null);
   constructor(private http: HttpClient, private _errorService: ErrorService) { }
 
 
