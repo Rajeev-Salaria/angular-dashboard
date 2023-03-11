@@ -1,7 +1,7 @@
-import { sharedRoutes } from './_share/routes/shared-routing.module';
+import { sharedRoutes } from './shared/routes/shared-routing.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundComponent } from './_pages/not-found/not-found.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 const routes: Routes = [{path:'',
 redirectTo: 'sign-in',pathMatch:"full"},
 {path:'',children:sharedRoutes},
