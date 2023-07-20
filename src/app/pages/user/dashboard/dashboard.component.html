@@ -113,20 +113,18 @@
               <ng-container *ngIf="products$ | async as products; else loading;">
                 <h4>News Update</h4>
                 <ng-container *ngFor="let product of products | slice:0:4 ; index as i;">
-                  <!--news-->
                   <div class="d-flex algin-items-center justify-content-between">
                     <div class="d-flex">
-                      <img height="48px" src="{{product.images[0]}}" width="48px" class="rounded me-3" alt="loading" />
+                      <img height="48px" [src]="product.image" width="48px" class="rounded me-3" alt="loading" />
                       <div>
-                        <h6 class="mt-0">{{product.title}}</h6>
-                        <p class="small mb-0 text-muted">{{product.brand}}</p>
+                        <h6 class="mt-0 product-title">{{product.title}}</h6>
+                        <p class="small mb-0 text-muted">{{product.category}}</p>
                       </div>
                     </div>
                     <small class="align-self-center text-muted">about {{i+1}} hours ago</small>
                   </div>
-                  <!-- /news -->
                 </ng-container>
-              </ng-container>
+              </ng-container> 
             </div>
             <div class="card-footer bg-white text-end fw-bold p-3">
               <a routerLink="view-all">View All</a>

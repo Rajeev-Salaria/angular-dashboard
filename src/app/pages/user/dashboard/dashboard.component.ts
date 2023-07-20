@@ -1,23 +1,23 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component,OnInit,ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import DatalabelsPlugin from 'chartjs-plugin-datalabels';
 import {ProductService } from 'src/app/services';
 import { map, Observable, pluck, tap } from 'rxjs';
-import { ProductArray } from 'src/app/shared/models';
+import { Product } from 'src/app/shared/models';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
   public barChartType: ChartType = 'bar';
   public pieChartType: ChartType = 'pie';
   public pieChartPlugins = [ DatalabelsPlugin ];
   public barChartPlugins = [DatalabelsPlugin];
-  public products$!: Observable<ProductArray[]>;
+  public products$!: Observable<Product[]>;
   constructor(private _productService: ProductService){
   }
 
@@ -84,7 +84,7 @@ export class DashboardComponent {
 // #end region
 
 ngOnInit() {
-this.products$ = this._productService.getProducts().pipe(pluck('products'));
+this.products$ = this._productService.getProducts();
 }
 
 

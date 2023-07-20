@@ -15,7 +15,7 @@ import { map } from 'rxjs';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent implements OnInit,AfterViewInit{
+export class RegisterComponent implements OnInit{
   public form!: FormGroup;
   public isSubmit: boolean = false;
   constructor(public fb: FormBuilder, private _authService: AuthService,private router: Router,private renderer:Renderer2) {}
@@ -39,11 +39,6 @@ export class RegisterComponent implements OnInit,AfterViewInit{
     }
     this.router.navigate(['/home']);
    }))
-  }
-
-  ngAfterViewInit(): void {
-    let root = this.renderer.selectRootElement('#initial-loader');
-    this.renderer.setStyle(root, 'display', 'none');
   }
 
   get firstName() {
@@ -80,6 +75,6 @@ export class RegisterComponent implements OnInit,AfterViewInit{
 
  onSubmit() {
     this.isSubmit = true;
-    this._authService.register(this.form.value).subscribe(data=>console.log(data),(error)=>this.isSubmit=false,()=>this.isSubmit=false);
+    this._authService.register(this.form.value).subscribe(data=> this.router.navigate(['/home']),(error)=>this.isSubmit=false,()=>this.isSubmit=false);
   }
 }

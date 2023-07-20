@@ -5,9 +5,9 @@ import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angula
 })
 export class TestDirective {
 @Input() appTest:string = "";
-  constructor(private el:ElementRef) {
-    // this.el.nativeElement.style.color= "blue"
-   }
+  // constructor(private el:ElementRef) {
+  //   // this.el.nativeElement.style.color= "blue"
+  //  }
 
   @HostBinding ('style.color') color:string='green';
 

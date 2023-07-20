@@ -12,7 +12,7 @@ type gender = 'male' | 'female';
   providedIn: 'root'
 })
 export class AuthService {
-  private url = 'http://localhost:5000/api/user';
+  public url = 'http://localhost:5000/api/user';
   public isDeleted = false;
   public user = new BehaviorSubject<string | null>(null);
   public userInfo = new BehaviorSubject<string|null|undefined|object>(null);

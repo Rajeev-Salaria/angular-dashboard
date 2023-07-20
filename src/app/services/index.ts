@@ -3,3 +3,4 @@ export * from './auth.service';
 export * from './error.service';
 export * from './product.service';
 export * from './common.service';
+export * from './upload.service';

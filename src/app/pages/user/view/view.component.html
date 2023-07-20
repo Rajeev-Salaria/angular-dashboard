@@ -8,7 +8,7 @@
       <div class="card">
         <div class="card-body" *ngIf="user">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item px-0"><span class="fw-bold">First Name -</span> {{user.firstName | titlecase}}</li>
+            <li class="list-group-item px-0"><span class="fw-bold">First Name -</span> <span>{{user.firstName | titlecase}}</span></li>
             <li class="list-group-item px-0"><span class="fw-bold">Last Name -</span> {{user.lastName | titlecase}}</li>
             <li class="list-group-item px-0"><span class="fw-bold">Email -</span> {{user.email}}</li>
             <li class="list-group-item px-0"><span class="fw-bold">City -</span> {{user.city | titlecase}}</li>

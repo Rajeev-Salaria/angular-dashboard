@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/services';
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss'],
 })
-export class SignInComponent implements OnInit ,AfterViewInit{
+export class SignInComponent implements OnInit{
   protected isRegister: boolean = true;
   public form!: FormGroup;
   public isSubmit: boolean = false;
@@ -29,11 +29,6 @@ export class SignInComponent implements OnInit ,AfterViewInit{
     if (this._authService.user) {
       this.router.navigate(['/home']);
     }
-  }
-
-  ngAfterViewInit(): void {
-    let root = this.render.selectRootElement('#initial-loader');
-    this.render.setStyle(root, 'display', 'none');
   }
 
   get email() {

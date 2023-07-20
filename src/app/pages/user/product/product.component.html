@@ -1,1 +1,51 @@
-<p>product works!</p>
+<!-- <div *ngFor="let data of data">
+    <img src="data:image/jpeg;base64,{{data}}"/>
+</div> -->
+
+<img height="300px" src="data:image/jpeg;base64,{{data.xm}}">
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <input type="file" (change)="onChange($event)" />
+    <button>upload</button>
+
+</form>
+
+<div class="container">
+    <div class="row row row-cols-1 row-cols-md-3 g-3">
+        <ng-container *ngIf="products$ | async as products; else loading">
+            <ng-container *ngFor="let product of products; index as i; ">
+                <div class="col">
+                    <div class="card h-100">
+                        <img [src]="product.image" class="rounded img-fluid card-img-top" style="height:200px;"
+                            alt="loading" />
+                        <div class="card-body">
+                            <div>
+                                <h6 class="mt-0">{{product.title}}</h6>
+                                <p class="small mb-0 text-muted">{{product.category}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+
+    </div>
+</div>
+
+
+
+<ng-template #loading>
+    <div class="d-flex justify-content-center algin-items-center">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</ng-template>
+
+
+<div class="zone" (drop)="handleDrop($event)" (dragover)="handleDragOver($event)" (dragenter)="handleDragEnter($event)"  (dragleave)="handleDragLeave($event)">
+    <div class="upload-area d-flex align-items-center p-3">
+        <h3
+            class="position-relative text-center text-white w-100 m-4 p-5 h-100 d-flex align-items-center justify-content-center">
+            Drop</h3>
+    </div>
+</div>

@@ -52,7 +52,7 @@
 				</ng-container>
 			</table>
 			<ng-container *ngIf="count > 10">
-				<ngb-pagination (pageChange)="onSkip($event)" [collectionSize]="count" [(page)]="page"
+				<ngb-pagination [maxSize]="10" (pageChange)="onSkip($event)" [collectionSize]="count || 20" [(page)]="page"
 					[directionLinks]="false" [rotate]="true" [ellipses]="false"></ngb-pagination></ng-container>
 		</div>
 	</div>
@@ -63,3 +63,4 @@
 		<h6 class="mb-0 text-white">Successfully deleted!</h6>
 	</ngb-toast>
 </div>
+

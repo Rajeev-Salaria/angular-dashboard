@@ -7,10 +7,11 @@ import { Product } from '../shared/models/product.model';
   providedIn: 'root'
 })
 export class ProductService {
-  private url = 'https://dummyjson.com/products';
+  private url = 'http://localhost:5000/api';
   constructor(private http: HttpClient) {}
-  getProducts(): Observable<Product> {
-    return this.http
-      .get<Product>(this.url);
+
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.url+'/allProducts');
   }
+
 }
