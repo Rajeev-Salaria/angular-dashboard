@@ -9,10 +9,9 @@ export class ErrorService {
   constructor(private router:Router) { }
 
   handleError(error: HttpErrorResponse) {
-    console.log(error.error.message)
     let errorMessage = '';
     if (!error.error || !error.error.error) {
-      if (error.error.message === "jwt expired") {
+      if (error?.error?.message === "jwt expired") {
         localStorage.removeItem('token');
         errorMessage= error.error.message;
         this.router.navigate(['/sign-in'])

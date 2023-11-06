@@ -71,6 +71,9 @@
                                             aria-label="Password" [ngClass]="!password?.valid && password?.touched ? 'is-invalid' : ''">
                                             <small class="text-danger fw-semibold" *ngIf="!password?.valid && password?.touched">Password is required field.</small>
                                     </div>
+                                    <div class="col-12 text-end">
+                                        <a routerLink="/forgot-password" class="text-underline">Forgot password?</a>
+                                    </div>
                                     <div class="col-12">
                                         <button class="btn btn-primary" id="submitBtn" type="submit" [disabled]="isSubmit || !form.valid">
                                             <ng-container *ngIf="isSubmit">

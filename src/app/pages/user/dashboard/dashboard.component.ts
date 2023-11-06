@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   public pieChartType: ChartType = 'pie';
   public pieChartPlugins = [ DatalabelsPlugin ];
   public barChartPlugins = [DatalabelsPlugin];
-  public products$!: Observable<Product[]>;
+  public products$!: Observable<Product>;
   constructor(private _productService: ProductService){
   }
 

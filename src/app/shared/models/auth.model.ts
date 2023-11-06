@@ -9,6 +9,9 @@ interface RegisterForm {
   gender: string;
   phone?: string;
   _id?: string;
+  logo?:string;
+  updatedAt?:string;
+  createdAt?:string;
 }
 
 interface LoginForm {

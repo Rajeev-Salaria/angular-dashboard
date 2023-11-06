@@ -47,7 +47,7 @@ export class SignInComponent implements OnInit{
         console.log(data)
         localStorage.setItem('token', data.token)
       },
-      (error) => this.isSubmit = false,
+      (error) =>{ this.isSubmit = false;console.log(error)},
       () => (this.isSubmit = false)
     );
   }

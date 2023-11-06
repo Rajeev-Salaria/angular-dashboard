@@ -8,7 +8,7 @@ import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 
 
-fdescribe('DashboardComponent', () => {
+describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
   let service:ProductService;

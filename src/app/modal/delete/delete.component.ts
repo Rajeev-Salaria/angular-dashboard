@@ -14,14 +14,14 @@ export class DeleteComponent {
 	constructor(public activeModal: NgbActiveModal,public _authService:AuthService,private modalService: NgbModal) {}
 
   // on delete record
-  delete(){
-    this._authService.delete(this.user._id).subscribe(data=>{
-      if(data!==undefined && data !== null){
-      this.modalService.dismissAll();
-      this._authService.isDeleted = true;
-      }
-    })
-  }
+// on delete record
+delete(){
+  this._authService.delete(this.user._id).subscribe(data=>{
+    if(data!==undefined && data !== null){
+    this.activeModal.close('deleted');
+    }
+  })
+}
 }
 
 

@@ -11,7 +11,8 @@
       </div>
       <ul class="nav flex-column">
         <li class="nav-item" *ngFor="let elm of navService.userMenuItems">
-            <a routerLink="{{elm.path}}" class="nav-link text-dark p-3 rounded" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="fw-bold active">
+            <a routerLink="{{elm.path}}" class="nav-link text-dark p-3 rounded" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="fw-bold active" [queryParams]="elm.link=='product' ? { skip:0,max:10 } : null"
+            queryParamsHandling="merge">
               <span class="me-lg-3 me-2"><img src={{elm.image}} alt="loading"/></span>
               <span class='text-capitalize small'>{{elm.link}}</span>
             </a >
